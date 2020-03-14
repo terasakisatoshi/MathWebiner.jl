@@ -1,95 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="/MathWebner.jl/libs/katex/katex.min.css">
-     
-   <link rel="stylesheet" href="/MathWebner.jl/libs/highlight/github.min.css">
-   
-  <link rel="stylesheet" href="/MathWebner.jl/css/franklin.css">
-  <link rel="stylesheet" href="/MathWebner.jl/css/pure.css">
-  <link rel="stylesheet" href="/MathWebner.jl/css/side-menu.css">
-  <link rel="stylesheet" href="/MathWebner.jl/css/theorem.css">
-
-  <!-- style adjustments -->
-  <style>
-    .franklin-content{padding-left:10%;}
-    @media (min-width: 940px) {
-      .franklin-content {width: 640px; margin-left: 0px; padding-left: 80px;}
-      .header {width: 700px;}
-    }
-  </style>
-   <title>ようこそ</title>  
-    <!-- PLOTLY -->
-  
-</head>
-<body>
-  <div id="layout">
-    <!-- Menu toggle / hamburger icon -->
-    <a href="#menu" id="menuLink" class="menu-link"><span></span></a>
-    <div id="menu">
-      <div class="pure-menu">
-        <a class="pure-menu-heading" href="#">Pure-SM</a>
-        <ul class="pure-menu-list">
-          <li class="pure-menu-item pure-menu-selected"><a href="/MathWebner.jl/" class="pure-menu-link">Home</a></li>
-          <li class="pure-menu-item "><a href="/MathWebner.jl/PlotlyJS1/" class="pure-menu-link">PlotlyJS Example1</a></li>
-          <li class="pure-menu-item "><a href="/MathWebner.jl/PlotlyJS2/" class="pure-menu-link">PlotlyJS Example2</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="main"> <!-- Closed in foot -->
-      <div class="header">
-        <h1>ようこそ</h1>
-      </div>
-
-<!-- Content appended here -->
-
-<div class="franklin-content">
-<h1 id="40704139907180484"><a href="#40704139907180484">このページは</a></h1>
-<p>Franklin.jl を使ったWeb page のサンプルです．</p>
-<h2 id="3490682963327278605"><a href="#3490682963327278605">導入</a></h2>
-<div class="definition">&#40;Franklin.jl&#41; <br /><a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> は Julia で記述された 静的サイトの生成を行うパッケージである．コーディング，数学などの技術ブログの作成をサポートする． 公式ドキュメントは https://franklinjl.org/ を参照せよ.</div>
-<div class="prop">&#40;特徴&#41; <br /> Franklin.jl では次の機能を持っている</p>
-<ul>
-<li><p>マークダウンで記述することができる.</p>
-</li>
-<li><p>数式のレンダリングは KaTeX を用いている. <code>&#36;</code> マークで挟むことで数式を表現できる.</p>
-</li>
-</ul></div>
-<div class="example">真の分布 \(q\) に従う \(n\) 個の確率変数の組 \(X^n = (X_1,\dots,X_n)\), パラメータ \(w\) を持つ確率モデル \(p(x|w)\), パラメータの事前分布 \(\varphi(w)\) から定まる逆温度 \(\beta\) 付きの \(w\) の事後分布 \(p(w|X^n)\) を次で定義する: \[
-p(w|X^n) = \frac{\displaystyle\prod_{i=1}^n p(X_i|w)^\beta \varphi(w)}{Z_n(\beta)},
-\] \[
-Z_n(\beta) = \int \prod_{i=1}^n p(X_i|w)^\beta \varphi(w) dw
-\]</div>
-<div class="lemma">次のようにJuliaのコードを記述することができる:</div>
-<div class="proof"><br/>  <pre><code class="language-julia">x = 3.141592
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/MathWebner.jl/libs/katex/katex.min.css"> <link rel=stylesheet  href="/MathWebner.jl/libs/highlight/github.min.css"> <link rel=stylesheet  href="/MathWebner.jl/css/franklin.css"> <link rel=stylesheet  href="/MathWebner.jl/css/pure.css"> <link rel=stylesheet  href="/MathWebner.jl/css/side-menu.css"> <link rel=stylesheet  href="/MathWebner.jl/css/theorem.css"> <style> .franklin-content{padding-left:10%;} @media (min-width: 940px) { .franklin-content {width: 640px; margin-left: 0px; padding-left: 80px;} .header {width: 700px;} } </style> <title>ようこそ</title> <div id=layout > <a href="#menu" id=menuLink  class=menu-link ><span></span></a> <div id=menu > <div class=pure-menu > <a class=pure-menu-heading  href="#">Pure-SM</a> <ul class=pure-menu-list > <li class="pure-menu-item pure-menu-selected"><a href="/MathWebner.jl/" class=pure-menu-link >Home</a> <li class="pure-menu-item "><a href="/MathWebner.jl/PlotlyJS1/" class=pure-menu-link >PlotlyJS Example1</a> <li class="pure-menu-item "><a href="/MathWebner.jl/PlotlyJS2/" class=pure-menu-link >PlotlyJS Example2</a> </ul> </div> </div> <div id=main > <div class=header > <h1>ようこそ</h1> </div> <div class=franklin-content > <h1 id=40704139907180484 ><a href="#40704139907180484">このページは</a></h1> <p>Franklin.jl を使ったWeb page のサンプルです．</p> <h2 id=3490682963327278605 ><a href="#3490682963327278605">導入</a></h2> <div class=definition >&#40;Franklin.jl&#41; <br /><a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> は Julia で記述された 静的サイトの生成を行うパッケージである．コーディング，数学などの技術ブログの作成をサポートする． 公式ドキュメントは https://franklinjl.org/ を参照せよ.</div> <div class=prop >&#40;特徴&#41; <br /> Franklin.jl では次の機能を持っている</p> <ul> <li><p>マークダウンで記述することができる.</p> <li><p>数式のレンダリングは KaTeX を用いている. <code>&#36;</code> マークで挟むことで数式を表現できる.</p> </ul></div> <div class=example >真の分布 <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> に従う <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 個の確率変数の組 <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>n</mi></msup><mo>=</mo><mo stretchy=false >(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator=true >,</mo><mo>…</mo><mo separator=true >,</mo><msub><mi>X</mi><mi>n</mi></msub><mo stretchy=false >)</mo></mrow><annotation encoding="application/x-tex">X^n = (X_1,\dots,X_n)</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.68333em;vertical-align:0em;"></span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >=</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span></span><span class=base ><span class=strut  style="height:1em;vertical-align:-0.25em;"></span><span class=mopen >(</span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mpunct >,</span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class=minner >…</span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class=mpunct >,</span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mclose >)</span></span></span></span>, パラメータ <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> を持つ確率モデル <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy=false >(</mo><mi>x</mi><mi mathvariant=normal >∣</mi><mi>w</mi><mo stretchy=false >)</mo></mrow><annotation encoding="application/x-tex">p(x|w)</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class=mopen >(</span><span class="mord mathdefault">x</span><span class=mord >∣</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mclose >)</span></span></span></span>, パラメータの事前分布 <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mo stretchy=false >(</mo><mi>w</mi><mo stretchy=false >)</mo></mrow><annotation encoding="application/x-tex">\varphi(w)</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">φ</span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mclose >)</span></span></span></span> から定まる逆温度 <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span></span></span></span> 付きの <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> の事後分布 <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy=false >(</mo><mi>w</mi><mi mathvariant=normal >∣</mi><msup><mi>X</mi><mi>n</mi></msup><mo stretchy=false >)</mo></mrow><annotation encoding="application/x-tex">p(w|X^n)</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mord >∣</span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class=mclose >)</span></span></span></span> を次で定義する: <span class=katex-display ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy=false >(</mo><mi>w</mi><mi mathvariant=normal >∣</mi><msup><mi>X</mi><mi>n</mi></msup><mo stretchy=false >)</mo><mo>=</mo><mfrac><mstyle scriptlevel=0  displaystyle=true ><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>p</mi><mo stretchy=false >(</mo><msub><mi>X</mi><mi>i</mi></msub><mi mathvariant=normal >∣</mi><mi>w</mi><msup><mo stretchy=false >)</mo><mi>β</mi></msup><mi>φ</mi><mo stretchy=false >(</mo><mi>w</mi><mo stretchy=false >)</mo></mstyle><mrow><msub><mi>Z</mi><mi>n</mi></msub><mo stretchy=false >(</mo><mi>β</mi><mo stretchy=false >)</mo></mrow></mfrac><mo separator=true >,</mo></mrow><annotation encoding="application/x-tex"> p(w|X^n) = \frac{\displaystyle\prod_{i=1}^n p(X_i|w)^\beta \varphi(w)}{Z_n(\beta)}, </annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mord >∣</span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class=mclose >)</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >=</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span></span><span class=base ><span class=strut  style="height:4.255066em;vertical-align:-0.936em;"></span><span class=mord ><span class="mopen nulldelimiter"></span><span class=mfrac ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:3.3190660000000003em;"><span style="top:-2.9653970000000003em;"><span class=pstrut  style="height:3.6513970000000002em;"></span><span class=mord ><span class=mord ><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class=mclose >)</span></span></span><span style="top:-3.881397em;"><span class=pstrut  style="height:3.6513970000000002em;"></span><span class=frac-line  style="border-bottom-width:0.04em;"></span></span><span style="top:-5.319066000000001em;"><span class=pstrut  style="height:3.6513970000000002em;"></span><span class=mord ><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class=pstrut  style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class=pstrut  style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∏</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class=pstrut  style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:1.277669em;"><span></span></span></span></span></span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span><span class=mopen >(</span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mord >∣</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mclose ><span class=mclose >)</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8991079999999999em;"><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05278em;">β</span></span></span></span></span></span></span></span><span class="mord mathdefault">φ</span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mclose >)</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class=mpunct >,</span></span></span></span></span> <span class=katex-display ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>n</mi></msub><mo stretchy=false >(</mo><mi>β</mi><mo stretchy=false >)</mo><mo>=</mo><mo>∫</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>p</mi><mo stretchy=false >(</mo><msub><mi>X</mi><mi>i</mi></msub><mi mathvariant=normal >∣</mi><mi>w</mi><msup><mo stretchy=false >)</mo><mi>β</mi></msup><mi>φ</mi><mo stretchy=false >(</mo><mi>w</mi><mo stretchy=false >)</mo><mi>d</mi><mi>w</mi></mrow><annotation encoding="application/x-tex"> Z_n(\beta) = \int \prod_{i=1}^n p(X_i|w)^\beta \varphi(w) dw </annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:1em;vertical-align:-0.25em;"></span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class=mclose >)</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >=</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span></span><span class=base ><span class=strut  style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class=pstrut  style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class=pstrut  style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∏</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class=pstrut  style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:1.277669em;"><span></span></span></span></span></span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span><span class=mopen >(</span><span class=mord ><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mord >∣</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mclose ><span class=mclose >)</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8991079999999999em;"><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05278em;">β</span></span></span></span></span></span></span></span><span class="mord mathdefault">φ</span><span class=mopen >(</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class=mclose >)</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span></span></div> <div class=lemma >次のようにJuliaのコードを記述することができる:</div> <div class=proof ><br/> <pre><code class=language-julia >x = 3.141592
 y = sin(x)
-@show y</code></pre> このとき, <code>y</code> の値は評価され次の出力を得ることができる: <pre><code class="plaintext">y = 6.535897930762419e-7
-</code></pre></div> <br/>
-<div class="remark">&#40;通し番号について&#41; <br /> 通し番号は Franklin ではデフォルトでサポートしていない. CSS でカウンタを定義しておく必要がある．</div>
-<h1 id="newcommand"><a href="#newcommand"><code>newcommand</code> によるタイピングの簡略化</a></h1>
-<code>config.md</code> は文章を記述する上での設定を記述するために用いる. \(\LaTeX\) の <code>\newcommand</code> と同様に数式を記述するコマンドを簡略化できる.</p>
-<div class="example">&#40;\(\mathbb{R}\) の例&#41; <br /> <code>config.md</code> に次を追加しておく:     <pre><code class="language-julia">\newcommand{\R}{\mathbb R}</code></pre> これで <code>\R</code> で \(\mathbb R\) を表記できる.</div>
-<h1 id="12163597168740399100"><a href="#12163597168740399100">グラフの描画</a></h1>
+@show y</code></pre> このとき, <code>y</code> の値は評価され次の出力を得ることができる: <pre><code class=plaintext >y = 6.535897930762419e-7
+</code></pre></div> <br/> <div class=remark >&#40;通し番号について&#41; <br /> 通し番号は Franklin ではデフォルトでサポートしていない. CSS でカウンタを定義しておく必要がある．</div> <h1 id=newcommand ><a href="#newcommand"><code>newcommand</code> によるタイピングの簡略化</a></h1> <code>config.md</code> は文章を記述する上での設定を記述するために用いる. <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class=mspace  style="margin-right:-0.36em;"></span><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.68333em;"><span style="top:-2.904999em;"><span class=pstrut  style="height:2.7em;"></span><span class=mord ><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class=mspace  style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class=mspace  style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class="mord textrm">E</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.2155em;"><span></span></span></span></span><span class=mspace  style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> の <code>\newcommand</code> と同様に数式を記述するコマンドを簡略化できる.</p> <div class=example >&#40;<span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant=double-struck >R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.68889em;vertical-align:0em;"></span><span class=mord ><span class="mord mathbb">R</span></span></span></span></span> の例&#41; <br /> <code>config.md</code> に次を追加しておく: <pre><code class=language-julia >\newcommand{\R}{\mathbb R}</code></pre> これで <code>\R</code> で <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant=double-struck >R</mi></mrow><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.68889em;vertical-align:0em;"></span><span class="mord mathbb">R</span></span></span></span> を表記できる.</div>
+<h1 id=12163597168740399100 ><a href="#12163597168740399100">グラフの描画</a></h1>
 <code>PyPlot</code>, <code>gr,pyplot</code> をバックエンドとする <code>Plots.jl</code>, <code>PlotlyJS.jl</code> を用いた場合で確認している.</p>
-<pre><code class="language-julia">using PyPlot
+<pre><code class=language-julia >using PyPlot
 figure(figsize=(8, 6))
 x = range(-2, 2, length=500)
 for α in 1:5
     plot(x, sinc.(α .* x))
 end</code></pre>
 <img src="/MathWebner.jl/assets/index/code/output/sinc.svg" alt="">
-<pre><code class="language-julia">using Plots
+<pre><code class=language-julia >using Plots
 Plots.plot([1,2,3])</code></pre>
 <img src="/MathWebner.jl/assets/index/code/output/grplot.svg" alt="">
-<pre><code class="language-julia">pyplot()
+<pre><code class=language-julia >pyplot()
 Plots.plot(sin)</code></pre>
 <img src="/MathWebner.jl/assets/index/code/output/pyplotbkend.svg" alt="">
 <code>PlotlyJS</code> による例はサイドメニューのページを参照</p>
-<h1 id="pycalljl_python"><a href="#pycalljl_python">PyCall.jl によって Python のコードの実行結果を表示する.</a></h1>
+<h1 id=pycalljl_python ><a href="#pycalljl_python">PyCall.jl によって Python のコードの実行結果を表示する.</a></h1>
 <code>config.md</code> のコマンドを定義しておく.</p>
-<pre><code class="language-plaintext">\newcommand{\pycode}[2]{
+<pre><code class=language-plaintext >\newcommand{\pycode}[2]{
 ```julia:!#1
 #hideall
 using PyCall
@@ -105,7 +36,7 @@ println(py"res")
 \codeoutput{!#1}
 }</code></pre>
 <p>そして該当する Markdown ファイルに例えば下記のように <code>\pycode</code> コマンドと組み合わせたものを記述しておく.</p>
-<pre><code class="language-julia">\pycode{py1}{
+<pre><code class=language-julia >\pycode{py1}{
   import numpy as np
   np.random.seed(2)
   x = np.random.randn(5)
@@ -113,33 +44,29 @@ println(py"res")
   np.round(r, 2)
 }</code></pre>
 <p>と記述することで下記のようになる:</p>
- <pre><code class="language-python">import numpy as np
+ <pre><code class=language-python >import numpy as np
   np.random.seed(2)
   x = np.random.randn(5)
   r = np.linalg.norm(x) / len(x)
-  np.round(r, 2)</code></pre> <pre><code class="plaintext">0.65
+  np.round(r, 2)</code></pre> <pre><code class=plaintext >0.65
 </code></pre>
-<div class="page-foot">
-  <div class="copyright">
+<div class=page-foot >
+  <div class=copyright >
     &copy; SatoshiTerasaki. Last modified: March 14, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
   </div>
 </div>
 
 </div>
-<!-- CONTENT ENDS HERE -->
-      </div> <!-- end of id=main -->
-  </div> <!-- end of id=layout -->
+
+      </div> 
+  </div> 
   <script src="/MathWebner.jl/libs/pure/ui.min.js"></script>
   
-      <script src="/MathWebner.jl/libs/katex/katex.min.js"></script>
-<script src="/MathWebner.jl/libs/katex/auto-render.min.js"></script>
-<script>renderMathInElement(document.body)</script>
+      
+
+
 
   
   
       <script src="/MathWebner.jl/libs/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
-
-  
-</body>
-</html>
