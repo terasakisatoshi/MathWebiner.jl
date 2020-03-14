@@ -67,3 +67,20 @@ For instance:
 #2
 @@
 }
+
+\newcommand{\pycode}[2]{
+```julia:!#1
+#hideall
+using PyCall
+lines = replace("""!#2""", r"(^|\n)([^\n]+)\n?$" => s"\1res = \2")
+py"""
+$$lines
+"""
+println(py"res")
+```
+```python
+#2
+```
+\codeoutput{!#1}
+}
+
