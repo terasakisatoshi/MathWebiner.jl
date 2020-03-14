@@ -5,7 +5,9 @@
 
 # このページは
 
-Franklin.jl を使ったWeb page のサンプルです．
+Franklin.jl を使った Web page のサンプルです．
+
+Web 生成に使われたコードは全て https://github.com/terasakisatoshi/MathWebiner.jl にて管理さてれています．
 
 ## 導入
 
