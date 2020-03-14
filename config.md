@@ -5,10 +5,10 @@ The website_* must be defined for the RSS to work
 ------------------------------------------------------->
 @def website_title = "MathSorcerer's daily life"
 @def website_descr = "MathSorcerer's blog"
-@def website_url   = "https://terasakisatoshi.github.io/MathWebner.jl/"
+@def website_url   = "https://terasakisatoshi.github.io/MathWebiner.jl"
 @def hasplotly = false
 @def author = "SatoshiTerasaki"
-@def prepath = "MathWebner.jl"
+@def prepath = "MathWebiner.jl"
 <!-----------------------------------------------------
 Add here global latex commands to use throughout your
 pages. It can be math commands but does not need to be.
