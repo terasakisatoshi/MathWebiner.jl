@@ -7,11 +7,8 @@
 <div class="increment count1">
 ~~~
 
-# 今日も一日
+# PlotlyJS の例
 
-@@definition
-ゴマちゃんとは
-@@
 
 ```julia:plotly3d
 using PlotlyJS
@@ -71,75 +68,3 @@ fdplotly(json(p)) # hide
 ```
 
 \textoutput{plotly3d}
-
-$$
-1+1
-$$
-
-$$
-1+2
-$$
-
-@@reset@@
-
-## Section goma
-
-@@theorem
-これは定理
-@@
-
-$$
-\begin{bmatrix}
-1 & 0 \\
-0 & 1 \\
-\end{bmatrix}
-$$
-
-@@reset@@
-
-### SubSection kyu
-
-@@theorem
-アレも定理
-@@
-
-@@theorem
-これも定理
-@@
-
-@@prop
-みんなみんな命題なんだ
-@@
-
-@@reset@@
-
-## Azarashi
-
-@@theorem
-キュ！ $x y z$
-@@
-
-@@reset@@
-
-## ピカピカ
-
-@@theorem
-ピッピカチュウ $x y z$
-@@
-
-
-@@reset@@
-
-# Oh Yes
-
-@@prop
-aa
-@@
-
-# aaa
-# bbb
-
-reference: ![alt text][ref]
-
-[ref]: https://juliacon.org/2018/assets/img/julia-logo-dots.png
-Notes:
