@@ -81,7 +81,7 @@ html {
     TITLES
 ================================================================== */
 
-body { 
+body {
     counter-reset: eqnum section chapter theorem;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .franklin-content h2::before {
-    content: "Section " counter(section)": ";
+    content: "§ " counter(section)": ";
     counter-increment: section;
 }
 

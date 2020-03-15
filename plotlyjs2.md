@@ -3,11 +3,7 @@
 @def hascode = true
 @def hasplotly = true
 
-~~~
-<div class="increment count1">
-~~~
-
-# PlotlyJS の例
+\chapter{PlotlyJS の例}
 
 
 ```julia:plotly3d

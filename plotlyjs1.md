@@ -3,7 +3,7 @@
 @def hascode = true
 @def hasplotly = true
 
-## Offline-generated plot
+\chapter{Offline-generated plot}
 
 Assuming you already have the Plotly code for some plot, displaying  the  result on a page with Franklin is now pretty straightforward.
 Start by adding
@@ -58,4 +58,3 @@ plt    = plot(data, layout)
 fdplotly(json(plt)) # hide
 ```
 \textoutput{plotlyexample1}
-
