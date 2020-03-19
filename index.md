@@ -197,6 +197,7 @@ run(`$exefile`)
 
 \proof{
 `````plaintext
+```c
 \Ccode{how2embeddC}{
 #include <stdio.h>
 int main(){
@@ -204,11 +205,12 @@ int main(){
 return 0;
 }
 }
+```
 `````
 }
 
 \Ccode{how2embeddC}{
-#include <stdio.h>
+#include "stdio.h"
 int main(){
     printf("Hello Pikachu\n");
 return 0;

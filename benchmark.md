@@ -74,12 +74,8 @@ int main()
     fclose(fp);
     return 0;
 }
-
 }
-
-
 描画は下記のとおりです。
-
 
 ```julia:plotmandC
 using CSV
@@ -88,7 +84,7 @@ df=CSV.read("_assets/benchmark/code/output/resultC.txt",header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandC.svg")) 
+savefig(p, joinpath(@OUTPUT, "mandC.png")) 
 ```
 
 \fig{mandC}
@@ -172,7 +168,7 @@ df=CSV.read(Jpath,header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandJ.svg")) 
+savefig(p, joinpath(@OUTPUT, "mandJ.jpg")) 
 ```
 
 \fig{mandJ}
