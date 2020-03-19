@@ -130,6 +130,52 @@ x = np.random.randn(5)
 r = np.linalg.norm(x) / len(x)
 np.round(r, 2)</code></pre> <pre><code class="plaintext">0.65
 </code></pre>
+<h1 id="c"><a href="/MathWebiner.jl/index.html#c">C のコードの実行結果を表示</a></h1>    <div class="reset"></div>
+<code>config.md</code> に次を記述しておく</p>
+<pre><code class="language-plaintext">\newcommand{\Ccode}[2]{
+```julia:!#1
+#hideall
+
+#=
+https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-available-to-ccall/7972/26
+=#
+
+C_code=raw"""
+!#2
+"""
+
+exefile = tempname()
+
+open(`gcc -Wall -O3 -march=native -xc -o $exefile -`, "w") do f
+    print(f, C_code)
+end
+
+run(`$exefile`)
+```
+
+```c
+!#2
+```
+
+\codeoutput{!#1}
+}</code></pre>
+<div class="prop"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext> </mtext></mrow><annotation encoding="application/x-tex">\ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace"> </span></span></span></span> &#40;ソースコードの表示&#41;<br /> つぎのように C のコードを貼り付けることができる.</div>
+<div class="proof"><br/>  <pre><code class="language-plaintext">\Ccode{how2embeddC}{
+#include <stdio.h>
+int main(){
+    printf("Hello Pika\n");
+return 0;
+}
+}</code></pre></div> <br/>
+
+<pre><code class="language-c">#include <stdio.h>
+int main(){
+    printf("Hello Pikachu\n");
+return 0;
+}</code></pre>
+<pre><code class="plaintext">Hello Pikachu
+</code></pre>
+<div class="remark"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext> </mtext></mrow><annotation encoding="application/x-tex">\ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace"> </span></span></span></span> &#40;Cのコードのハイライト&#41;<br /> <a href="https://highlightjs.org/download/">Getting hightlight.js</a>　から ハイライトしたい言語を選択した後 <code>highlight.pack.js</code> を <code>_lib/hightlight</code> にコピーする. もともと <code>_lib/highlight/highlight.pack.js</code> が配置されているが、Julia,Python,R、Markdownのみをハイライトするようになっている。</div>
 <div class="page-foot">
   <div class="copyright">
     &copy; SatoshiTerasaki. Last modified: March 19, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
