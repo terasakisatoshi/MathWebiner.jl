@@ -1,7 +1,7 @@
-Cpath="output/resultC.txt" #hide
-Ppath="output/resultP.txt" #hide
-run(`diff $Cpath $Ppath`) #hide
-run(`bash -c "cmp --silent $Cpath $Ppath || echo \"files are different\""`) #hide
+Cpath="/tmp/resultC.txt"
+Ppath="/tmp/resultP.txt"
+run(`diff $Cpath $Ppath`)
+run(`bash -c "cmp --silent $Cpath $Ppath || echo \"files are different\""`)
 
 using CSV
 using Plots
@@ -10,3 +10,4 @@ img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
 savefig(p, joinpath("output", "mandP.svg")) #hide
+

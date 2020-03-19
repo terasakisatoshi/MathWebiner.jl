@@ -31,7 +31,7 @@ def main():
             grid[j, i] = cnt(ReZ,ImZ,ReC,ImC)
     t=time.time()
     print("elapsed time", t-s)
-    with open("output/resultP.txt", "w") as f:
+    with open("/tmp/resultP.txt", "w") as f:
         for j in range(M):
             for i in range(N):
                 f.write(str(grid[j,i]))

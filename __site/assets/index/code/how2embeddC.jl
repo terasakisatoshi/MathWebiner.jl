@@ -6,7 +6,7 @@ https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-av
 =#
 
 C_code=raw"""
-#include <stdio.h>
+#include "stdio.h"
 int main(){
     printf("Hello Pikachu\n");
 return 0;

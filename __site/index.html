@@ -160,15 +160,17 @@ run(`$exefile`)
 \codeoutput{!#1}
 }</code></pre>
 <div class="prop"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext> </mtext></mrow><annotation encoding="application/x-tex">\ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace"> </span></span></span></span> &#40;ソースコードの表示&#41;<br /> つぎのように C のコードを貼り付けることができる.</div>
-<div class="proof"><br/>  <pre><code class="language-plaintext">\Ccode{how2embeddC}{
+<div class="proof"><br/>  <pre><code class="language-plaintext">```c
+\Ccode{how2embeddC}{
 #include <stdio.h>
 int main(){
     printf("Hello Pika\n");
 return 0;
 }
-}</code></pre></div> <br/>
+}
+```</code></pre></div> <br/>
 
-<pre><code class="language-c">#include <stdio.h>
+<pre><code class="language-c">#include "stdio.h"
 int main(){
     printf("Hello Pikachu\n");
 return 0;

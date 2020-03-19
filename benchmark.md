@@ -55,7 +55,7 @@ int main()
     double cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("Elapsed time %f [sec]\n", cpu_time_used);
     FILE *fp;
-    fp = fopen("_assets/benchmark/code/output/resultC.txt", "w");
+    fp = fopen("/tmp/resultC.txt", "w");
     for (int j = 0; j < N; j++)
     {
         for (int i = 0; i < N; i++)
@@ -80,11 +80,11 @@ int main()
 ```julia:plotmandC
 using CSV
 using Plots
-df=CSV.read("_assets/benchmark/code/output/resultC.txt",header=false)
+df=CSV.read("/tmp/resultC.txt",header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandC.png")) 
+savefig(p, joinpath(@OUTPUT, "mandC.svg")) 
 ```
 
 \fig{mandC}
@@ -95,7 +95,7 @@ savefig(p, joinpath(@OUTPUT, "mandC.png"))
 \output{mandP}
 
 \input{julia}{vismandP.jl}
-\fig{mandP}
+\fig{mandP.svg}
 
 
 \section{Julia のコード}
@@ -136,10 +136,10 @@ function main()
     end
     t=time()
     @show(t-s)
-    io = open("_assets/benchmark/code/output/resultJ.txt", "w")
+    io = open("/tmp/resultJ.txt", "w")
     for j in 1:M
     	for i in 1:N
-    		print(io, grid[j,i])
+    		print(io, grid[i,j])
     		if i!=N
     			print(io,',')
     		else
@@ -157,10 +157,9 @@ main()
 \output{mandJ}
 
 ```julia:plotmandJ
-Cpath="_assets/benchmark/code/output/resultC.txt" #hide
-Jpath="_assets/benchmark/code/output/resultJ.txt" #hide
-run(`diff $Cpath $Jpath`) #hide
-run(`cmp --silent $Cpath $Jpath || echo "files are different"`) #hide
+Cpath="/tmp/resultC.txt"
+Jpath="/tmp/resultJ.txt"
+run(`bash -c "cmp --silent $Cpath $Jpath || echo \"files are different\""`)
 
 using CSV
 using Plots
@@ -168,7 +167,7 @@ df=CSV.read(Jpath,header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandJ.jpg")) 
+savefig(p, joinpath(@OUTPUT, "mandJ.svg")) 
 ```
 
 \fig{mandJ}
