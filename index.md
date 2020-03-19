@@ -154,3 +154,67 @@ x = np.random.randn(5)
 r = np.linalg.norm(x) / len(x)
 np.round(r, 2)
 }
+
+\chapter{C のコードの実行結果を表示}
+
+`config.md` に次を記述しておく
+
+`````plaintext
+
+\newcommand{\Ccode}[2]{
+```julia:!#1
+#hideall
+
+#=
+https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-available-to-ccall/7972/26
+=#
+
+C_code=raw"""
+!#2
+"""
+
+exefile = tempname()
+
+open(`gcc -Wall -O3 -march=native -xc -o $exefile -`, "w") do f
+    print(f, C_code)
+end
+
+run(`$exefile`)
+```
+
+```c
+!#2
+```
+
+\codeoutput{!#1}
+}
+
+`````
+
+\prop{(ソースコードの表示)}{
+つぎのように C のコードを貼り付けることができる.
+}
+
+\proof{
+`````plaintext
+\Ccode{how2embeddC}{
+#include <stdio.h>
+int main(){
+    printf("Hello Pika\n");
+return 0;
+}
+}
+`````
+}
+
+\Ccode{how2embeddC}{
+#include <stdio.h>
+int main(){
+    printf("Hello Pikachu\n");
+return 0;
+}
+}
+
+\remark{(Cのコードのハイライト)}{
+	[Getting hightlight.js](https://highlightjs.org/download/)　から ハイライトしたい言語を選択した後 `highlight.pack.js` を `_lib/hightlight` にコピーする. もともと `_lib/highlight/highlight.pack.js` が配置されているが、Julia,Python,R、Markdownのみをハイライトするようになっている。
+}
