@@ -19,9 +19,9 @@
       .header {width: 700px;}
     }
   </style>
-   <title>Animation</title>  
+   <title>PlotlyJS Example1</title>  
     <!-- PLOTLY -->
-  
+   <script src="/MathWebiner.jl/libs/plotly/plotly.min.js"></script> 
 </head>
 <body>
   <div id="layout">
@@ -34,46 +34,24 @@
           <li class="pure-menu-item "><a href="/MathWebiner.jl/" class="pure-menu-link">Home</a></li>
           <li class="pure-menu-item "><a href="/MathWebiner.jl/plotlyjs1/" class="pure-menu-link">PlotlyJS Example1</a></li>
           <li class="pure-menu-item "><a href="/MathWebiner.jl/plotlyjs2/" class="pure-menu-link">PlotlyJS Example2</a></li>
-          <li class="pure-menu-item pure-menu-selected"><a href="/MathWebiner.jl/animation/" class="pure-menu-link">Animation</a></li>
-          <li class="pure-menu-item "><a href="/MathWebiner.jl/benchmark/" class="pure-menu-link">Benchmark</a></li>
+          <li class="pure-menu-item "><a href="/MathWebiner.jl/animation/" class="pure-menu-link">Animation</a></li>
+          <li class="pure-menu-item pure-menu-selected"><a href="/MathWebiner.jl/benchmark/" class="pure-menu-link">Benchmark</a></li>
         </ul>
       </div>
     </div>
     <div id="main"> <!-- Closed in foot -->
       <div class="header">
-        <h1>Animation</h1>
+        <h1>PlotlyJS Example1</h1>
       </div>
 
 <!-- Content appended here -->
 
 <div class="franklin-content">
-<h1 id="animation"><a href="/MathWebiner.jl/animation/index.html#animation">Animation</a></h1>    <div class="reset"></div>
-<ul>
-<li><p>This example is taken from <a href="https://docs.juliaplots.org/latest/animations/">Plots.jl Animations</a></p>
-</li>
-</ul>
-<pre><code class="language-julia">using Plots
-
-@userplot CirclePlot
-@recipe function f(cp::CirclePlot)
-    x, y, i = cp.args
-    n = length(x)
-    inds = circshift(1:n, 1 - i)
-    linewidth --> range(0, 10, length = n)
-    alpha --> range(0, 1, length = n)
-    aspect_ratio --> 1
-    label --> false
-    x[inds], y[inds]
-end
-
-n = 400
-t = range(0, 2π, length = n)
-x = 16sin.(t).^3
-y = 13cos.(t) .- 5cos.(2t) .- 2cos.(3t) .- cos.(4t)
-anim = @animate for i ∈ 1:n
-    circleplot(x, y, i, line_z = 1:n, cbar = false, c = :reds, framestyle = :none)
-end when i > 40 && mod1(i, 10) == 5</code></pre>
-<img src="/MathWebiner.jl/assets/animation/code/output/granim.gif" alt="">
+<h1 id="julia_is_fast_but_how"><a href="/MathWebiner.jl/benchmark/index.html#julia_is_fast_but_how">Julia is fast, but how?</a></h1>    <div class="reset"></div>
+<pre><code class="language-c">#include<stdio.h>
+int main(){
+    printf("Hello World\n");
+}</code></pre>
 <div class="page-foot">
   <div class="copyright">
     &copy; SatoshiTerasaki. Last modified: March 19, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
