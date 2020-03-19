@@ -1,4 +1,3 @@
-
 import time
 import numpy as np
 
@@ -30,7 +29,7 @@ def main():
             ImZ = init_Im
             grid[j, i] = cnt(ReZ,ImZ,ReC,ImC)
     t=time.time()
-    print("elapsed time", t-s)
+    elapsed=f"elapsed time {t-s}"
     with open("/tmp/resultP.txt", "w") as f:
         for j in range(M):
             for i in range(N):
@@ -39,7 +38,6 @@ def main():
                     f.write('\n')
                 else:
                     f.write(',')
-    return 0
-
-main()
-
+    return elapsed
+ 
+print(main())

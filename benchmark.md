@@ -3,7 +3,7 @@
 @def hascode = true
 @def hasplotly = true
 
-\chapter{Julia is fast, but how?}
+\chapter{Is Julia fast ?}
 
 - Julia は LLVM による JIT コンパイルにより高速に動作し C 言語と同等のスピードを出すことができます。ここではベンチマークとしてマンデルブロ集合の生成する計算を例にJulia がどれくらいのパフォーマンスを出すのかを調べてみましょう。まずは, 比較対象として C と Python のプログラムをだしておきましょう.
 
@@ -75,7 +75,10 @@ int main()
     return 0;
 }
 }
+
+
 描画は下記のとおりです。
+
 
 ```julia:plotmandC
 using CSV
@@ -84,7 +87,7 @@ df=CSV.read("/tmp/resultC.txt",header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandC.svg")) 
+savefig(p, joinpath(@OUTPUT, "mandC.svg"))
 ```
 
 \fig{mandC}
@@ -92,9 +95,11 @@ savefig(p, joinpath(@OUTPUT, "mandC.svg"))
 \section{Python のコード}
 
 \input{python}{mand.py}
+
 \output{mandP}
 
 \input{julia}{vismandP.jl}
+
 \fig{mandP.svg}
 
 
@@ -135,7 +140,7 @@ function main()
 		end
     end
     t=time()
-    @show(t-s)
+    @show(t - s)
     io = open("/tmp/resultJ.txt", "w")
     for j in 1:M
     	for i in 1:N
@@ -167,7 +172,7 @@ df=CSV.read(Jpath,header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandJ.svg")) 
+savefig(p, joinpath(@OUTPUT, "mandJ.svg"))
 ```
 
 \fig{mandJ}
