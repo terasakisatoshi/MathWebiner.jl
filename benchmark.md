@@ -1,16 +1,14 @@
-@def title = "PlotlyJS Example1"
+@def title = "How fast is Julia language?"
 @def hasmath = true
 @def hascode = true
 @def hasplotly = true
 
 \chapter{Julia is fast, but how?}
 
-```c
-#include<stdio.h>
+\Ccode{azarashi}{
+#include <stdio.h>
 int main(){
-    printf("Hello World\n");
+    printf("Hello Pika\n");
+return 0;
 }
-```
-
-
-
+}

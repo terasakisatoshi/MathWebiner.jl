@@ -1,1 +1,1 @@
-Plots.AnimatedGif("/Users/terasaki/work/MathWebiner.jl/__site/assets/animation/code/output/granim.gif")
+Plots.AnimatedGif("/home/terasaki/work/MathWebiner.jl/__site/assets/animation/code/output/granim.gif")
