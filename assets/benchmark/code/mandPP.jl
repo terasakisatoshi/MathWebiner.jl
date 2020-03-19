@@ -1,4 +1,7 @@
-import time
+# This file was generated, do not modify it. # hide
+#hideall
+using PyCall
+lines = replace("""import time
 import numpy as np
 
 
@@ -16,7 +19,7 @@ def cnt(ReZ,ImZ,ReC,ImC):
 
 def main():
     s = time.time()
-    N = 2500
+    N = 100
     M = N
     grid = np.empty((M,N),dtype=np.uint8)
     init_Re = 0.0
@@ -40,4 +43,8 @@ def main():
                     f.write(',')
     return elapsed
  
-print(main())
+res=main()""", r"(^|\n)([^\n]+)\n?$" => s"\1res = \2")
+py"""
+$$lines
+"""
+println(py"res")

@@ -31,7 +31,7 @@ function main()
 		end
     end
     t=time()
-    @show(t-s)
+    @show(t - s)
     io = open("/tmp/resultJ.txt", "w")
     for j in 1:M
     	for i in 1:N
