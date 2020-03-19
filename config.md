@@ -35,6 +35,10 @@ For instance:
   @@reset@@
 }
 
+\newcommand{\subsection}[1]{
+  ### #1
+}
+
 \newcommand{\space}{$\ $}
 \newcommand{\definition}[2]{
 @@definition \space#1\
