@@ -12,9 +12,9 @@
 - C のコードを書いてみました. ヘッダーは `<stdio.h>` と書くべきですが, `#include <stdio.h>` とコードブロックに記述するとヘッダー名が消えてしまう現象があり、ここではそれを回避するために `"stdio.h"` と表記しています。
 
 \Ccode{mandC}{
-#include "stdio.h"
-#include "stdint.h"
-#include "time.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <time.h>
 
 uint8_t cnt(double ReZ,double ImZ,double ReC,double ImC){
     uint8_t k=0;
@@ -87,7 +87,7 @@ df=CSV.read("/tmp/resultC.txt",header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandC.svg"))
+savefig(p, joinpath(@OUTPUT, "mandC.svg")) #hide
 ```
 
 \fig{mandC}
@@ -172,7 +172,8 @@ df=CSV.read(Jpath,header=false)
 img=convert(Matrix,df)
 M,N = img |> size
 p=heatmap(1:N,1:M,img,aspect_ratio=1)
-savefig(p, joinpath(@OUTPUT, "mandJ.svg"))
+savefig(p, joinpath(@OUTPUT, "mandJ.svg")) #hide
 ```
 
+\output{plotmandJ}
 \fig{mandJ}

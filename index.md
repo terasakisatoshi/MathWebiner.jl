@@ -164,10 +164,13 @@ np.round(r, 2)
 \newcommand{\Ccode}[2]{
 ```julia:!#1
 #hideall
+using Markdown
 
-#=
-https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-available-to-ccall/7972/26
-=#
+mdC_code = Markdown.htmlesc(raw"""!#2""")
+mdfile=joinpath(dirname(@OUTPUT), "!#1.md")
+open(mdfile,"w") do f
+    print(f, mdC_code)
+end
 
 C_code=raw"""
 !#2
@@ -175,18 +178,23 @@ C_code=raw"""
 
 exefile = tempname()
 
-open(`gcc -Wall -O3 -march=native -xc -o $exefile -`, "w") do f
+#=
+This trick is taken from
+
+https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-available-to-ccall/7972/26
+=#
+
+open(`gcc -Wall -O2 -march=native -xc -o $exefile -`, "w") do f
     print(f, C_code)
 end
 
 run(`$exefile`)
 ```
 
-```c
-!#2
-```
+\input{c}{!#1.md}
 
 \codeoutput{!#1}
+
 }
 
 `````
@@ -195,6 +203,8 @@ run(`$exefile`)
 つぎのように C のコードを貼り付けることができる.
 }
 
+次のコードをタイプすることで望むべき結果が得られる.
+
 \proof{
 `````plaintext
 ```c
@@ -202,7 +212,7 @@ run(`$exefile`)
 #include <stdio.h>
 int main(){
     printf("Hello Pika\n");
-return 0;
+    return 0;
 }
 }
 ```
@@ -210,10 +220,10 @@ return 0;
 }
 
 \Ccode{how2embeddC}{
-#include "stdio.h"
+#include <stdio.h>
 int main(){
     printf("Hello Pikachu\n");
-return 0;
+    return 0;
 }
 }
 

@@ -104,16 +104,25 @@ println(py"res")
 \newcommand{\Ccode}[2]{
 ```julia:!#1
 #hideall
+using Markdown
 
-#=
-https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-available-to-ccall/7972/26
-=#
+mdC_code = Markdown.htmlesc(raw"""!#2""")
+mdfile=joinpath(dirname(@OUTPUT), "!#1.md")
+open(mdfile,"w") do f
+    print(f, mdC_code)
+end
 
 C_code=raw"""
 !#2
 """
 
 exefile = tempname()
+
+#=
+This trick is taken from
+
+https://discourse.julialang.org/t/how-to-make-a-c-function-compiled-by-myself-available-to-ccall/7972/26
+=#
 
 open(`gcc -Wall -O2 -march=native -xc -o $exefile -`, "w") do f
     print(f, C_code)
@@ -122,9 +131,7 @@ end
 run(`$exefile`)
 ```
 
-```c
-!#2
-```
+\input{c}{!#1.md}
 
 \codeoutput{!#1}
 
