@@ -64,7 +64,7 @@ int main()
     fclose(fp);
     return 0;
 }""")
-mdfile=joinpath(dirname(@OUTPUT), "mandC.md")
+mdfile = joinpath(dirname(@OUTPUT), "mandC.md")
 open(mdfile,"w") do f
     print(f, mdC_code)
 end

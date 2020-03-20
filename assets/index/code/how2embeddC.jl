@@ -7,7 +7,7 @@ int main(){
     printf("Hello Pikachu\n");
     return 0;
 }""")
-mdfile=joinpath(dirname(@OUTPUT), "how2embeddC.md")
+mdfile = joinpath(dirname(@OUTPUT), "how2embeddC.md")
 open(mdfile,"w") do f
     print(f, mdC_code)
 end
