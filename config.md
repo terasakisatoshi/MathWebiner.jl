@@ -100,7 +100,6 @@ println(py"res")
 \codeoutput{!#1}
 }
 
-
 \newcommand{\Ccode}[2]{
 ```julia:!#1
 #hideall
@@ -132,6 +131,10 @@ run(`$exefile`)
 ```
 
 \input{c}{!#1.md}
+}
+
+\newcommand{\Cexec}[2]{
+\Ccode{!#1}{!#2}
 
 \codeoutput{!#1}
 
