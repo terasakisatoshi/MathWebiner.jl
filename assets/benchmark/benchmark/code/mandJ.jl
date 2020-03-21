@@ -50,7 +50,7 @@ function main()
     grid = mand(M,N)
     t = time()
     @show(t - s)
-    writedlm("/tmp/resultJ.txt",grid,",")
+    writedlm("/tmp/benchJ.txt",grid,",")
 end
 
 main()

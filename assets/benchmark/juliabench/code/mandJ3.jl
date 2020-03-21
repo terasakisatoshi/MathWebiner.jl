@@ -1,4 +1,7 @@
 # This file was generated, do not modify it. # hide
+#=
+set environment variable `NUM_JULIA_THREADS=8` before julia begins
+=#
 using DelimitedFiles
 
 function cnt(z,c)
@@ -18,7 +21,11 @@ function mand(M, N)
     init_z = complex(0.0, 0.0)
     xs = range(-2,2,length=N)
     ys = range(-2,2,length=M)
-    grid = cnt.(init_z,complex.(xs',ys))
+    Base.Threads.@threads for i in 1:N
+        for j in 1:M
+            grid[j, i] = cnt(init_z,complex(xs[i], ys[j]))
+        end
+    end
     return grid
 end
 
@@ -28,7 +35,7 @@ function main()
     grid = mand(M, N)
     t = time()
     @show(t - s)
-    writedlm("/tmp/resultJ2.txt",grid,",")
+    writedlm("/tmp/resultJ3.txt",grid,",")
 end
 
 main()
