@@ -15,12 +15,12 @@ end
 
 function mand(M, N)
     grid = Array{UInt8}(undef, M, N)
-    init_z = ComplexF64(0.0, 0.0)
+    init_z = complex(0.0, 0.0)
     xs = range(-2,2,length=N)
     ys = range(-2,2,length=M)
     for (i,x) in enumerate(xs)
         for (j,y) in enumerate(ys)
-            grid[j, i] = cnt(init_z,ComplexF64(x, y))
+            grid[j, i] = cnt(init_z,complex(x, y))
         end
     end
     return grid

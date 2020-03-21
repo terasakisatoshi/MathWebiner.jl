@@ -82,15 +82,14 @@ int main()
 
 
 ```julia:plotmandC
-using CSV
-using Plots
+using DelimitedFiles
 img = readdlm("/tmp/benchC.txt",',',Int)
 M,N = img |> size
-p=heatmap(1:N,1:M,img,aspect_ratio=1,size=(400,400))
-savefig(p, joinpath(@OUTPUT, "mandC.svg")) #hide
+p=heatmap(1:N, 1:M, img, aspect_ratio=1, size=(400,400))
+savefig(p, joinpath(@OUTPUT, "mandC.png")) #hide
 ```
 
-\fig{mandC}
+\fig{mandC.png}
 
 \section{Python のコード}
 
@@ -158,7 +157,7 @@ function main()
     grid = mand(M,N)
     t = time()
     @show(t - s)
-    writedlm("/tmp/resultJ.txt",grid,",")
+    writedlm("/tmp/benchJ.txt",grid,",")
 end
 
 main()
@@ -174,14 +173,14 @@ Refpath="/tmp/benchC.txt"
 Tarpath="/tmp/benchJ.txt"
 run(`bash -c "cmp --silent $Refpath $Tarpath || echo \"files are different\""`)
 
-using DelimitedFiles
 using Plots
-img = readdlm(Tarpath, ',', Int)
+using DelimitedFiles
+img = readdlm(Tarpath,',',Int)
 M,N = img |> size
-p=heatmap(1:N,1:M,img,aspect_ratio=1,size=(400,400))
-savefig(p, joinpath(@OUTPUT, "mandJ.svg")) # hide
+p = heatmap(1:N,1:M,img,aspect_ratio=1, size=(400, 400))
+savefig(p, joinpath(@OUTPUT, "mandJ.png")) #hide
 ```
 
 \output{plotmandJ}
 
-\fig{mandJ}
+\fig{mandJ.png}

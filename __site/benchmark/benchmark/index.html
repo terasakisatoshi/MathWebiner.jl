@@ -123,15 +123,14 @@ int main&#40;&#41;
     fclose&#40;fp&#41;;
     return 0;
 &#125;</code></pre>
-<pre><code class="plaintext">Elapsed time 0.466722 [sec]
+<pre><code class="plaintext">Elapsed time 0.467089 [sec]
 </code></pre>
 <p>描画は下記のとおりです。</p>
-<pre><code class="language-julia">using CSV
-using Plots
+<pre><code class="language-julia">using DelimitedFiles
 img = readdlm("/tmp/benchC.txt",',',Int)
 M,N = img |> size
-p=heatmap(1:N,1:M,img,aspect_ratio=1,size=(400,400))</code></pre>
-<img src="/MathWebiner.jl/assets/benchmark/benchmark/code/output/mandC.svg" alt="">
+p=heatmap(1:N, 1:M, img, aspect_ratio=1, size=(400,400))</code></pre>
+<img src="/MathWebiner.jl/assets/benchmark/benchmark/code/output/mandC.png" alt="">
 <h2 id="python"><a href="#python">Python のコード</a></h2>    <div class="reset"></div>
 <pre><code class="language-python">import time
 import numpy as np
@@ -243,27 +242,27 @@ function main()
     grid = mand(M,N)
     t = time()
     @show(t - s)
-    writedlm("/tmp/resultJ.txt",grid,",")
+    writedlm("/tmp/benchJ.txt",grid,",")
 end
 
 main()
 
 using BenchmarkTools
 @btime mand(2500, 2500);</code></pre>
-<pre><code class="plaintext">t - s = 0.47764086723327637
-  476.732 ms (2 allocations: 5.96 MiB)
+<pre><code class="plaintext">t - s = 0.4760470390319824
+  469.135 ms (2 allocations: 5.96 MiB)
 </code></pre>
 <pre><code class="language-julia">Refpath="/tmp/benchC.txt"
 Tarpath="/tmp/benchJ.txt"
 run(`bash -c "cmp --silent $Refpath $Tarpath || echo \"files are different\""`)
 
-using DelimitedFiles
 using Plots
-img = readdlm(Tarpath, ',', Int)
+using DelimitedFiles
+img = readdlm(Tarpath,',',Int)
 M,N = img |> size
-p=heatmap(1:N,1:M,img,aspect_ratio=1,size=(400,400))</code></pre>
+p = heatmap(1:N,1:M,img,aspect_ratio=1, size=(400, 400))</code></pre>
 
-<img src="/MathWebiner.jl/assets/benchmark/benchmark/code/output/mandJ.svg" alt="">
+<img src="/MathWebiner.jl/assets/benchmark/benchmark/code/output/mandJ.png" alt="">
 <div class="page-foot">
   <div class="copyright">
     &copy; SatoshiTerasaki. Last modified: March 21, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
