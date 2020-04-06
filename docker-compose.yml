@@ -16,3 +16,13 @@ services:
     ports:
       - "8000:8000"
     command: bash -c "julia --project=/work -e 'using Franklin; serve(port=8001)' & python3 -m http.server --bind 0.0.0.0 --directory /work/__site"
+  
+  webscratch:
+    build: ./
+    container_name: mathwebiner-webscratch
+    volumes:
+      - ./:/work
+    working_dir: /work
+    ports:
+      - "8000:8000"
+    command: bash -c "julia --project=/work -e 'using Franklin; serve(clear=true, port=8001)' & python3 -m http.server --bind 0.0.0.0 --directory /work/__site"
