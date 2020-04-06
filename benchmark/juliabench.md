@@ -4,7 +4,7 @@
 
 \chapter{パフォーマンスを維持したままJuliaらしく}
 
-```julia:mandJ
+```julia:mandJ0
 using DelimitedFiles
 
 function cnt(ReZ, ImZ, ReC, ImC)
@@ -40,7 +40,7 @@ end
 
 function main()
     s = time()
-    M = N = 5000
+    M = N = 4200
     grid = mand(M,N)
     t = time()
     @show(t - s)
@@ -53,7 +53,7 @@ using BenchmarkTools
 @btime mand(5000, 5000);
 ```
 
-\output{mandJ}
+\output{mandJ0}
 
 \remark{}{
 点の位置をあらわす `(4.0 / (M - 1) * (j - 1) - 2.0)` は `range(-2, 2, length(N))` と数学的に等価ですが，数値の誤差の関係で結果が若干異なることがあります．
@@ -259,11 +259,12 @@ Tarpath="/tmp/resultJ3.txt"
 run(`bash -c "cmp --silent $Refpath $Tarpath || echo \"files are different\""`)
 
 using Plots
+
 using DelimitedFiles
 img = readdlm(Tarpath, ',', Int)
 M,N = img |> size
 p = heatmap(1:N, 1:M, img,aspect_ratio=1, size=(400, 400))
-savefig(p, joinpath(@OUTPUT, "mandJ3.png")) #hide
+savefig(p, joinpath(@OUTPUT, "mandJ3.png"))
 ```
 
 \output{plotmandJ3}

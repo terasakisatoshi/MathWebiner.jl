@@ -15,7 +15,8 @@ RUN apt-get update && \
     libgtk-3-0 \
     dvipng \
     texlive-latex-recommended  \
-    zip
+    zip \
+    libxt6 libxrender1 libxext6 libgl1-mesa-glx libqt5widgets5 # GR
 
 RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python3 && \
     pip3 install \
