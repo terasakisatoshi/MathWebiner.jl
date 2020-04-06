@@ -1,20 +1,20 @@
-<!-----------------------------------------------------
+<!-- ---------------------------------------------------
 Add here global page variables to use throughout your
 website.
 The website_* must be defined for the RSS to work
-------------------------------------------------------->
+----------------------------------------------------- -->
 @def website_title = "MathSorcerer's daily life"
 @def website_descr = "MathSorcerer's blog"
 @def website_url   = "https://terasakisatoshi.github.io/MathWebiner.jl"
 @def hasplotly = false
 @def author = "SatoshiTerasaki"
 @def prepath = "MathWebiner.jl"
-<!-----------------------------------------------------
+<!-- ---------------------------------------------------
 Add here global latex commands to use throughout your
 pages. It can be math commands but does not need to be.
 For instance:
 * \newcommand{\phrase}{This is a long phrase to copy.}
-------------------------------------------------------->
+----------------------------------------------------- -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\scal}[1]{\langle #1 \rangle}
