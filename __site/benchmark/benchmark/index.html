@@ -123,7 +123,7 @@ int main&#40;&#41;
     fclose&#40;fp&#41;;
     return 0;
 &#125;</code></pre>
-<pre><code class="plaintext">Elapsed time 0.466983 [sec]
+<pre><code class="plaintext">Elapsed time 0.451247 [sec]
 </code></pre>
 <p>描画は下記のとおりです。</p>
 <pre><code class="language-julia">using DelimitedFiles
@@ -131,7 +131,7 @@ using Plots
 img = readdlm("/tmp/benchC.txt",',',Int)
 M,N = img |> size
 p=heatmap(1:N, 1:M, img, aspect_ratio=1, size=(400,400))</code></pre>
-<p><span style="color:red;">// Image matching '/assets/benchmark/benchmark/code/mandC.png' not found. //</span></p>
+<img src="/MathWebiner.jl/assets/benchmark/benchmark/code/output/mandC.png" alt="">
 <h2 id="python_のコード"><a href="#python_のコード">Python のコード</a></h2>    <div class="reset"></div>
 <pre><code class="language-python">import time
 import numpy as np
@@ -250,8 +250,8 @@ main()
 
 using BenchmarkTools
 @btime mand(2500, 2500);</code></pre>
-<pre><code class="plaintext">t - s = 0.46416187286376953
-  458.478 ms (2 allocations: 5.96 MiB)
+<pre><code class="plaintext">t - s = 0.6403429508209229
+  591.901 ms (2 allocations: 5.96 MiB)
 </code></pre>
 <pre><code class="language-julia">Refpath="/tmp/benchC.txt"
 Tarpath="/tmp/benchJ.txt"
