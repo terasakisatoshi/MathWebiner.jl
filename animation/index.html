@@ -20,7 +20,7 @@
     }
   </style>
    <title>Animation</title>  
-    <!-- PLOTLY -->
+  <!-- PLOTLY -->
   
 </head>
 <body>
@@ -62,7 +62,7 @@
     n = length(x)
     inds = circshift(1:n, 1 - i)
     linewidth --> range(0, 10, length = n)
-    alpha --> range(0, 1, length = n)
+    seriesalpha --> range(0, 1, length = n)
     aspect_ratio --> 1
     label --> false
     x[inds], y[inds]
@@ -78,7 +78,7 @@ end when i > 40 && mod1(i, 10) == 5</code></pre>
 <img src="/MathWebiner.jl/assets/animation/code/output/granim.gif" alt="">
 <div class="page-foot">
   <div class="copyright">
-    &copy; SatoshiTerasaki. Last modified: March 15, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
+    &copy; SatoshiTerasaki. Last modified: April 06, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
   </div>
 </div>
 
