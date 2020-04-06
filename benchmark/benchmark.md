@@ -83,6 +83,7 @@ int main()
 
 ```julia:plotmandC
 using DelimitedFiles
+using Plots
 img = readdlm("/tmp/benchC.txt",',',Int)
 M,N = img |> size
 p=heatmap(1:N, 1:M, img, aspect_ratio=1, size=(400,400))

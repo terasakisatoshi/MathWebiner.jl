@@ -19,6 +19,7 @@ RUN apt-get update && \
 
 RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python3 && \
     pip3 install \
+    matplotlib \
     numpy \
     numba
 
